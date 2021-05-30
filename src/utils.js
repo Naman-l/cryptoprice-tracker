@@ -1,12 +1,13 @@
 export const formatData = (data) => {
+  if(data.length){
   let finalData = {
     labels: [],
     datasets: [
       {
         label: "Price",
         data: [],
-        backgroundColor: "rgb(252,140,3, 0.8)",
-        borderColor: "rgba(252,140,3, 0.2)",
+        backgroundColor: "rgb(89, 0, 255, 0.8)",
+        borderColor: "rgba(89, 0, 255, 0.2)",
         fill: false,
         
       },
@@ -34,4 +35,5 @@ export const formatData = (data) => {
   finalData.datasets[0].data = priceArr;
 
   return finalData;
+}
 };

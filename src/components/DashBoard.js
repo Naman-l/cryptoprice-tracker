@@ -12,13 +12,30 @@ const Dashboard = ({ price, data }) => {
     devicePixelRatio: 1,
     alignToPixels: true,
     plugins:{legend:{labels:{font:{
-      size:16
-    }}}}
+      size:16,
+      color:"#ffffff"
+    }}}},
+    scales: {
+      xAxes: [{ 
+          gridLines: {
+              display: false,
+          },
+          ticks: {
+            fontColor: "white", // this here
+          },
+      }],
+      yAxes: [{
+          display: false,
+          gridLines: {
+              display: false,
+          },
+      }],
+  }
   
   };
-  if (price === "0.00") {
-    return <div className="error">Please select a currency pair or time duration</div>;
-  }
+  // if (price === "0.00") {
+  //   return <div className="error">Please select a currency pair or time duration</div>;
+  // }
   return (
     <div className="dashboard">
       <div className="price">{`$${price} `}</div>

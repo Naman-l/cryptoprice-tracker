@@ -22,12 +22,15 @@ const DateRangeSelector = ({
     if (mode !== "") {
       setStartDate(moment().startOf(mode));
       setEndDate(moment().startOf("day").add(1, "day"));
-    }
-  }, [mode, setEndDate, setStartDate]);
+    
+  }}, [mode, setEndDate, setStartDate]);
 
   return (
     <div width="100%">
+
       <div className="duration">
+
+<span className="duraHead">DURATION :</span>
         {Object.keys(TIMESPAN).map((k) => (
           <span
             key={k}

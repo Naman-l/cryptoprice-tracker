@@ -3,7 +3,7 @@ import React from 'react'
 const Footer=(price)=> {
 
     if (price!=="0.00"){
-        return<div className="footer">Designed and Developed by Naman Sharma
+        return<div className="footer">Designed and Developed by pekkacodes
         <div  >
             <span className="links" >
               <a
@@ -33,6 +33,17 @@ const Footer=(price)=> {
                 rel="noreferrer"
               >
                 <span >GitHub
+                </span>
+              </a>
+            </span>
+
+            <span className="links">
+              <a
+                href="https://pekkacodes-portfolio.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span >Portfolio
                 </span>
               </a>
             </span>

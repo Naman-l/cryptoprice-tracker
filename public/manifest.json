@@ -3,19 +3,15 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "2-2-clash-of-clans-pekka-png_16x16.ico",
+      "src": "2-2-clash-of-clans-pekka-png_64x64.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
+    
     {
-      "src": "2-2-clash-of-clans-pekka-png_16x16.ico",
+      "src": "2-2-clash-of-clans-pekka-png_64x64.ico",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "2-2-clash-of-clans-pekka-png_16x16.ico",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "64x64"
     }
   ],
   "start_url": ".",

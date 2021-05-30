@@ -1,10 +1,44 @@
-.container {
+.full{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.logo{
+  width: 100%;
+  height: auto;
+
+}
+.quote{
+  font-size: 18px;
+  color:#ffffff !important;
+  text-align: center;
+  
+  
+}
+
+.rightSide{
+
   margin-top: 15px;
   margin-left: 25px;
   margin-right: 25px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  height: 100vh;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: dashed;
+  
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container {
+  margin-top: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  height: 92vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 }
@@ -13,38 +47,47 @@
   flex-direction: column;
   align-items: center;
   height: 80vh;
-  padding-bottom:30px;
 }
 
 .chart-container {
-  width: 75%;
+  width: 90%;
   height: 90%;
 }
 
 .duration{
-  padding-top:10px;
-  font-size: 16px;
+  padding-top:20px;
+  font-size: 18px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 700;
-  color:indigo;
+  color:rgb(89, 0, 255);
   
 }
-.duration:hover{
+
+.dur{
+
+  padding:8px;
+}
+.duraHead{
+  color:#ffffff;
+
+}
+.dur:hover{
   cursor: pointer;
 }
-.dur{
-  padding:10px;
-}
 
-.dur:hover{
-  background-color:lightblue;
-}
+.dur:active
+ {
+     border:0.1px dashed rgb(89, 0, 255); /* here configure as your needs */
+  
+  }
+
 .price{
   padding: 10px;
   text-decoration:solid;
-  font-size: 20px;
-  color:rgb(255, 136, 0);
+  font-size: 28px;
+  color:rgb(89, 0, 255);
   font-weight: 900;
+
 }
 
 .currency{
@@ -52,13 +95,29 @@
   font-weight: 500;
   border-radius: 8px;
   text-align-last: center;
+  padding: 5px;
+  background-color:rgb(163, 117, 248);
+
+  
   }
+.currText{
+  padding-right:8px;
+  padding-bottom: 10px;
+  color:#ffffff;
+}
+
+.pp{
+  padding-bottom: 15px;
+}
 
   .footer{
     font-size: 14px;
     font-weight: 600;
-   color: #000 !important;
+   color: #ffffff !important;
    text-decoration: none !important;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
   }
 
  .links{
@@ -66,16 +125,31 @@
    padding: 8px;
    font-size: 10px;
    font-weight: 500;
+   color:rgb(89, 0, 255);
 
    
 
  } 
 
  .error{
-   padding-top:20px;
    padding-bottom: 20px;
+   font-size: 10px;
+   font-weight: 600;
+   opacity: 0.8;
+   color: #ffffff;
  }
 
+ @media screen and (max-width: 800px) {
+  .full{
+    flex-wrap: wrap;
+  }
+  .quote{
+    font-size: 12px !important;
+    
+  }
+
+}
+
   body{
-    background-color:rgb(251, 248, 235);
+    background-color:#000;
   }

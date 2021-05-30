@@ -3,10 +3,12 @@ import Dashboard from "./components/DashBoard";
 import Footer from "./components/Footer";
 import DateRangeSelector from "./components/DateRangeSelector";
 
+
 import "./App.css";
 
 
 import { formatData } from "./utils";
+
 
 export default function App() {
   const [currencies, setcurrencies] = useState([]);
@@ -21,7 +23,7 @@ export default function App() {
   const url = "https://api.pro.coinbase.com";
   
 
-  console.log(startDate,endDate)
+
 
   useEffect(() => {
     ws.current = new WebSocket("wss://ws-feed.pro.coinbase.com");
@@ -59,10 +61,12 @@ export default function App() {
     apiCall();
   }, []);
 
+
   useEffect(() => {
     if (!first.current) {
       return;
     }
+
 
     let msg = {
       type: "subscribe",
@@ -72,9 +76,8 @@ export default function App() {
     let jsonMsg = JSON.stringify(msg);
     ws.current.send(jsonMsg);
 
-    // &start=${startDate.format(
-    //   "YYYY-MM_DDThh:mm:ss"
-    // )}&end=${endDate.format("YYYY-MM_DDThh:mm:ss")}
+
+
 
     let historicalDataURL = `${url}/products/${pair}/candles?&start=${startDate.format(
       "YYYY-MM-DDThh:mm:ss"
@@ -102,7 +105,7 @@ export default function App() {
       }
     };
   }, [pair, startDate, endDate]);
-  console.log(pastData);
+
 
   const handleSelect = (e) => {
     let unsubMsg = {
@@ -119,8 +122,20 @@ export default function App() {
   };
 
   return (
-    <div className="container">
-      {
+    <>
+    <div className="full">   
+
+    <div class="rightSide">
+      <img  className="logo" src="/pekkacodes.png" alt="" width="50%"/>
+      <div className="quote">If you don't believe it or don't get it, I don't have the time to try to convince you, sorry.”<br/> – Satoshi Nakamoto</div>
+      
+    </div>
+     <div className="container">
+
+   {price==="0.00"?
+   <div className="error">Select a currency pair or time duration</div>
+ :""}
+      <span class="pp"><span className="currText">Currency Pair</span>{
         <select className="currency" value={pair} onChange={handleSelect}>
           {currencies.map((cur, idx) => {
             return (
@@ -130,20 +145,23 @@ export default function App() {
             );
           })}
         </select>
-      }
+      }</span>
       <DateRangeSelector
-        startDate={startDate}
+        startDate={startDate }
         setStartDate={setStartDate}
-        endDate={endDate}
+        endDate={endDate }
         setEndDate={setEndDate}
         hideTime
       />
       <Dashboard price={price} data={pastData} />
-      <Footer price={price}/>
 
-
-      
     </div>
+
+
+    </div>
+    <Footer price={price}/>
+
+    </>
     
   );
 }
