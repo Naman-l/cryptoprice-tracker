@@ -125,7 +125,7 @@
    padding: 8px;
    font-size: 10px;
    font-weight: 500;
-   color:rgb(89, 0, 255);
+   color:rgb(89, 0, 255) !important;
 
    
 
@@ -146,6 +146,13 @@
   .quote{
     font-size: 12px !important;
     
+  }
+  .error{
+    font-size: 10px;
+    padding-top: 20px;
+  }
+  .footer{
+    padding-top: 10px;
   }
 
 }
