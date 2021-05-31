@@ -39,7 +39,7 @@ const Footer=(price)=> {
 
             <span className="links">
               <a
-                href="https://pekkacodes-portfolio.vercel.app/"
+                href="https://pekkacodesportfolio.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
