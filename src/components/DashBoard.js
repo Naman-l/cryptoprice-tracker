@@ -33,16 +33,14 @@ const Dashboard = ({ price, data }) => {
   }
   
   };
-  // if (price === "0.00") {
-  //   return <div className="error">Please select a currency pair or time duration</div>;
-  // }
   return (
     <div className="dashboard">
-      <div className="price">{`$${price} `}</div>
+      <div className="price">Current Price :{`$${price} `}</div>
 
       <div className="chart-container">
-        <Line data={data} options={opts} />
-      </div>
+      {data?<Line data={data} options={opts} />:<span style={{color:"white"}}>Please select a valid date</span>}
+      <img  className="logo2" src="/pekkacodes.png" alt="" width="50%"/>
+    </div>
     </div>
   );
 };

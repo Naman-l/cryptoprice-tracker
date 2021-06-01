@@ -27,9 +27,7 @@ export default function App() {
 
   useEffect(() => {
     ws.current = new WebSocket("wss://ws-feed.pro.coinbase.com");
-
     let pairs = [];
-
     const apiCall = async () => {
       await fetch(url + "/products")
         .then((res) => res.json())
@@ -41,7 +39,6 @@ export default function App() {
           return pair;
         }
       });
-
       filtered = filtered.sort((a, b) => {
         if (a.base_currency < b.base_currency) {
           return -1;
@@ -51,22 +48,36 @@ export default function App() {
         }
         return 0;
       });
-
       setcurrencies(filtered);
-
       first.current = true;
-      
     };
-
-    apiCall();
+    apiCall() 
+   
   }, []);
+
+  // useEffect(()=>{
+
+  //   let check=true
+  //   if(endDate?.diff(startDate,'days')<31 && check ){
+  //     setGranularity(21600)
+      
+
+  //   }
+  //   return ()=>{check=false}
+    
+  // },[startDate,endDate])
 
 
   useEffect(() => {
     if (!first.current) {
       return;
     }
+    // let check=true
+    // if(endDate?.diff(startDate,'days' && check)>31){
+    //   setGranularity(86400)
+      
 
+    // }else{setGranularity(21600)}
 
     let msg = {
       type: "subscribe",
@@ -78,7 +89,6 @@ export default function App() {
 
 
 
-
     let historicalDataURL = `${url}/products/${pair}/candles?&start=${startDate.format(
       "YYYY-MM-DDThh:mm:ss"
     )}&end=${endDate.format("YYYY-MM-DDThh:mm:ss")}&granularity=86400`;
@@ -87,9 +97,12 @@ export default function App() {
       await fetch(historicalDataURL)
         .then((res) => res.json())
         .then((data) => (dataArr = data));
+        
 
       let formattedData = formatData(dataArr);
       setpastData(formattedData);
+      
+      
     };
 
     fetchHistoricalData();
@@ -122,15 +135,11 @@ export default function App() {
   };
 
   return (
-    <>
+    <div>
     <div className="full">   
 
     <div class="rightSide">
-      <img  className="logo" src="/pekkacodes.png" alt="" width="50%"/>
-      <div className="quote">If you don't believe it or don't get it, I don't have the time to try to convince you, sorry.”<br/> – Satoshi Nakamoto</div>
-      
-    </div>
-     <div className="container">
+      {/* <img  className="logo" src="/pekkacodes.png" alt="" width="50%"/> */}
 
    {price==="0.00"?
    <div className="error">Select a currency pair or time duration</div>
@@ -153,15 +162,20 @@ export default function App() {
         setEndDate={setEndDate}
         hideTime
       />
+      {/* <div className="quote">If you don't believe it or don't get it, I don't have the time to try to convince you, sorry.”<br/> – Satoshi Nakamoto</div>
+       */}
+    </div>
+     <div className="container">
+
       <Dashboard price={price} data={pastData} />
 
     </div>
 
 
     </div>
-    <Footer price={price}/>
+    <Footer price={price} />
 
-    </>
+    </div>
     
   );
 }

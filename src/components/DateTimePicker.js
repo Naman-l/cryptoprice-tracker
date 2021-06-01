@@ -1,7 +1,8 @@
 import React from "react";
 import DateTime from "react-datetime";
 
-const DateTimePicker = ({
+
+const DateTimePicker= ({
   value,
   setValue,
   name,
@@ -13,15 +14,16 @@ const DateTimePicker = ({
     <DateTime
       value={value}
       onChange={setValue}
-      className="flex-grow"
+      className="dateTime"
       inputProps={{
+      
         name,
         placeholder,
       }}
       timeFormat={!hideTime}
       dateFormat={!hideDate && "D MMM, YYYY"}
       renderInput={(props) => {
-        return <input {...props} value={value ? props.value : ""} />;
+        return <span className="cal" {...props} value={value ? props.value : ""} />;
       }}
     />
   );

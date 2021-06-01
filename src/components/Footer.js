@@ -5,8 +5,8 @@ const Footer=(price)=> {
     if (price!=="0.00"){
         return<div className="footer">Designed and Developed by pekkacodes
         <div  >
-            <span className="links" >
-              <a
+            <span  >
+              <a className="links"
                 href="https://www.linkedin.com/in/naman-sharma-dev98"
                 target="_blank"
                 rel="noreferrer"
@@ -16,7 +16,7 @@ const Footer=(price)=> {
               </a>
             </span>
             <span className="links" >
-              <a
+              <a className="links"
                 href="https://twitter.com/the_growing_up"
                 target="_blank"
                 rel="noreferrer"
@@ -27,7 +27,7 @@ const Footer=(price)=> {
             </span>
 
             <span className="links">
-              <a
+              <a className="links"
                 href="https://github.com/Naman-l"
                 target="_blank"
                 rel="noreferrer"
@@ -38,7 +38,7 @@ const Footer=(price)=> {
             </span>
 
             <span className="links">
-              <a
+              <a className="links"
                 href="https://pekkacodesportfolio.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
